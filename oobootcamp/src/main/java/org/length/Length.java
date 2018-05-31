@@ -1,29 +1,42 @@
 package org.length;
 
 public class Length {
-  protected int mileToYard = 1760;
-  protected int mileToInch = 63360;
-  protected int mileToFeet = 5280;
-  protected int yardToFeet = 3;
-  protected int feetToInch = 12;
-  protected int value;
+  protected float mileToYard = 1760;
+  protected float mileToInch = 63360;
+  protected float mileToFeet = 5280;
+  protected float yardToFeet = 3;
+  protected float feetToInch = 12;
+  protected float value;
 
 
-  public int getValue() {
+  public float getValue() {
     return value;
   }
 
-  public int converter(Object object){
-    if(this instanceof Mile){
-        if(object instanceof Yard){
-          return  ((Yard) object).getValue()/mileToYard;
-        }
+  public String converter(Object object) {
+    float result;
+    if (object == null) {
+      return null;
     }
-    return 1;
+    if (object instanceof Mile) {
+      return String.valueOf(((Mile) object).getValue());
+    }
+    if (object instanceof Yard) {
+      result = (((Yard) object).getValue() / mileToYard);
+      return String.valueOf(result);
+    }
+    if (object instanceof Feet) {
+      return String.valueOf(((Feet) object).getValue() / mileToFeet);
+    }
+    if (object instanceof Inch) {
+      return String.valueOf(((Inch) object).getValue() / mileToInch);
+    }
+
+    return null;
   }
 
   public boolean equals(Object object) {
-    return this.value ==  converter(object);
+    return converter(this).equals(converter(object));
   }
 
 }
