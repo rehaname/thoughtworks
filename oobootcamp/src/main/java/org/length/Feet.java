@@ -2,11 +2,13 @@ package org.length;
 
 public class Feet extends Length {
   public Feet(int value) {
-    this.value = value;
-    this.setConvertedValue();
+    super(value);
   }
 
-  public void setConvertedValue() {
-    this.convertedValue = value / mileToFeet;
+  @Override
+  void setConvertedValue() {
+
+      this.convertedValue = value / mileToFeet;
+
   }
 }
