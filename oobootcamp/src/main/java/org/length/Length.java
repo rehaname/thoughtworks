@@ -4,8 +4,6 @@ public class Length {
   protected float mileToYard = 1760;
   protected float mileToInch = 63360;
   protected float mileToFeet = 5280;
-  protected float yardToFeet = 3;
-  protected float feetToInch = 12;
   protected float value;
 
 

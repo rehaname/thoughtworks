@@ -36,8 +36,8 @@
       <file leaf-file-name="LengthTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/org/length/LengthTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="88" column="42" lean-forward="true" selection-start-line="88" selection-start-column="42" selection-end-line="88" selection-end-column="42" />
+            <state relative-caret-position="115">
+              <caret line="84" column="45" lean-forward="true" selection-start-line="84" selection-start-column="45" selection-end-line="84" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -71,7 +71,8 @@
             <state relative-caret-position="102">
               <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding>
-                <marker date="1527819298409" expanded="true" signature="115:118" ph="{...}" />
+                <element signature="e#83#84#0" expanded="true" />
+                <element signature="e#117#118#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -93,13 +94,13 @@
       <file leaf-file-name="Length.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/length/Length.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="29" column="3" lean-forward="true" selection-start-line="29" selection-start-column="3" selection-end-line="29" selection-end-column="3" />
+            <state relative-caret-position="85">
+              <caret line="5" column="36" lean-forward="false" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
               <folding>
-                <element signature="e#277#278#0" expanded="true" />
-                <element signature="e#299#300#0" expanded="true" />
-                <element signature="e#782#783#0" expanded="true" />
-                <element signature="e#835#836#0" expanded="true" />
+                <element signature="e#208#209#0" expanded="true" />
+                <element signature="e#230#231#0" expanded="true" />
+                <element signature="e#713#714#0" expanded="true" />
+                <element signature="e#766#767#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -285,7 +286,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.LengthTest.getCompareYardEqualToMile">
+  <component name="RunManager" selected="JUnit.LengthTest">
     <configuration name="LengthTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -501,8 +502,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.LengthTest.getCompareYardEqualToMile" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.LengthTest" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.LengthTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.LengthTest.getCompareYardEqualToMile" />
         <item index="2" class="java.lang.String" itemvalue="JUnit.LengthTest.compareMileToYardShouldBeEqual" />
         <item index="3" class="java.lang.String" itemvalue="JUnit.LengthTest.compareMilesShouldBeEqual" />
         <item index="4" class="java.lang.String" itemvalue="JUnit.LengthTest.getCompareYardToMileShouldBeEqual" />
@@ -524,12 +525,18 @@
       <updated>1527214545480</updated>
       <workItem from="1527214549853" duration="9592000" />
       <workItem from="1527476382083" duration="3076000" />
-      <workItem from="1527674336071" duration="9763000" />
+      <workItem from="1527674336071" duration="10016000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
     <history-entry file="LengthTest - 2018.06.01 at 10h 19m 57s.xml">
+      <configuration name="LengthTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="LengthTest - 2018.06.01 at 10h 24m 57s.xml">
+      <configuration name="LengthTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="LengthTest - 2018.06.01 at 10h 25m 11s.xml">
       <configuration name="LengthTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="LengthTest_compareMileToYardShouldBeEqual - 2018.05.30 at 19h 35m 22s.xml">
@@ -547,21 +554,15 @@
     <history-entry file="LengthTest_compareMilesShouldBeEqual - 2018.05.30 at 19h 26m 31s.xml">
       <configuration name="LengthTest.compareMilesShouldBeEqual" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LengthTest_getCompareMileToYardShouldNotBeEqual - 2018.05.30 at 18h 09m 30s.xml">
-      <configuration name="LengthTest.getCompareMileToYardShouldNotBeEqual" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="LengthTest_getCompareYardEqualToMile - 2018.06.01 at 10h 20m 30s.xml">
       <configuration name="LengthTest.getCompareYardEqualToMile" configurationId="JUnit" />
     </history-entry>
     <history-entry file="LengthTest_getCompareYardEqualToMile - 2018.06.01 at 10h 20m 41s.xml">
       <configuration name="LengthTest.getCompareYardEqualToMile" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LengthTest_getCompareYardToMileShouldBeEqual - 2018.05.30 at 18h 15m 27s.xml">
-      <configuration name="LengthTest.getCompareYardToMileShouldBeEqual" configurationId="JUnit" />
-    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22431000" />
+    <option name="totallyTimeSpent" value="22684000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -772,7 +773,8 @@
         <state relative-caret-position="102">
           <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding>
-            <marker date="1527819298409" expanded="true" signature="115:118" ph="{...}" />
+            <element signature="e#83#84#0" expanded="true" />
+            <element signature="e#117#118#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -788,19 +790,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/length/Length.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="29" column="3" lean-forward="true" selection-start-line="29" selection-start-column="3" selection-end-line="29" selection-end-column="3" />
-          <folding>
-            <element signature="e#277#278#0" expanded="true" />
-            <element signature="e#299#300#0" expanded="true" />
-            <element signature="e#782#783#0" expanded="true" />
-            <element signature="e#835#836#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/length/Yard.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -812,10 +801,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/length/Length.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="36" lean-forward="false" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
+          <folding>
+            <element signature="e#208#209#0" expanded="true" />
+            <element signature="e#230#231#0" expanded="true" />
+            <element signature="e#713#714#0" expanded="true" />
+            <element signature="e#766#767#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/org/length/LengthTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="88" column="42" lean-forward="true" selection-start-line="88" selection-start-column="42" selection-end-line="88" selection-end-column="42" />
+        <state relative-caret-position="115">
+          <caret line="84" column="45" lean-forward="true" selection-start-line="84" selection-start-column="45" selection-end-line="84" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
