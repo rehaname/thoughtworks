@@ -86,7 +86,7 @@ public class LengthTest {
         Yard y = new Yard(3520);
         Mile m = new Mile(2);
 
-        Assert.assertTrue(y.equals(m));
+        Assert.assertTrue(y.equals(null));
     }
 
 

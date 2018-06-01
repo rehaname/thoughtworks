@@ -13,30 +13,24 @@ public class Length {
     return value;
   }
 
-  public String converter(Object object) {
-    float result;
-    if (object == null) {
-      return null;
-    }
+  public float converter(Object object) {
     if (object instanceof Mile) {
-      return String.valueOf(((Mile) object).getValue());
+      return ((Mile) object).getValue();
     }
-    if (object instanceof Yard) {
-      result = (((Yard) object).getValue() / mileToYard);
-      return String.valueOf(result);
+    else if (object instanceof Yard) {
+      return (((Yard) object).getValue() / mileToYard);
     }
-    if (object instanceof Feet) {
-      return String.valueOf(((Feet) object).getValue() / mileToFeet);
+    else if (object instanceof Feet) {
+      return ((Feet) object).getValue() / mileToFeet;
     }
-    if (object instanceof Inch) {
-      return String.valueOf(((Inch) object).getValue() / mileToInch);
+    else if (object instanceof Inch) {
+      return ((Inch) object).getValue() / mileToInch;
     }
-
-    return null;
+    return 0;
   }
 
   public boolean equals(Object object) {
-    return converter(this).equals(converter(object));
+    return converter(this) == converter(object);
   }
 
 }
