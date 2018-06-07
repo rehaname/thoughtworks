@@ -74,7 +74,7 @@ public class LengthTest {
     }
 
     @Test
-    public void getCompareYardToYardShouldNotBeEqual2(){
+    public void getCompareYardToYardShouldNotBeEqual2() {
         Yard y1 = new Yard(3);
         Yard y2 = new Yard(4);
 
@@ -106,7 +106,7 @@ public class LengthTest {
     //Start of Requirement 3
 
     @Test
-    public void getCompareYardEqualToFeet(){
+    public void getCompareYardEqualToFeet() {
         Yard y = new Yard(1);
         Feet f = new Feet(3);
 
@@ -114,7 +114,7 @@ public class LengthTest {
     }
 
     @Test
-    public void getCompareFeetEqualToInch(){
+    public void getCompareFeetEqualToInch() {
         Feet f = new Feet(1);
         Inch i = new Inch(12);
 
@@ -122,7 +122,7 @@ public class LengthTest {
     }
 
     @Test
-    public void getCompareMileEqualToFeet(){
+    public void getCompareMileEqualToFeet() {
         Mile m = new Mile(1);
         Feet f = new Feet(5280);
 
@@ -135,6 +135,46 @@ public class LengthTest {
         Inch i = new Inch(63360);
 
         Assert.assertTrue(m.equals(i));
+    }
+
+    @Test
+    public void getSumInchEqualToFeet() {
+        Inch inch1 = new Inch(13);
+        Inch inch2 = new Inch(11);
+        Feet result = new Feet();
+
+        result.getSum(inch1, inch2);
+        Assert.assertTrue(result.getValue() == 2);
+    }
+
+    @Test
+    public void getSumFeetAndYardEqualToYard() {
+        Feet feet = new Feet(3);
+        Yard yard = new Yard(2);
+        Yard result = new Yard();
+
+        result.getSum(feet, yard);
+        Assert.assertTrue(result.getValue() == 3);
+    }
+
+    @Test
+    public void getInchAndMileEqualToMile(){
+        Inch inch = new Inch(126720);
+        Mile mile = new Mile(2);
+        Mile result = new Mile();
+
+        result.getSum(inch, mile);
+        Assert.assertTrue(result.getValue() == 4);
+    }
+
+    @Test
+    public void getMileAndFeetEqualToInch(){
+        Feet feet = new Feet(3);
+        Yard yard = new Yard(1);
+        Yard result = new Yard();
+
+        result.getSum(feet, yard);
+        Assert.assertTrue(result.getValue() == 2);
     }
 }
 
@@ -167,6 +207,9 @@ public class LengthTest {
 //Todo     1 Feet == 12 Inch DONE
 //Todo     1 Mile = 5280 Feet DONE
 //Todo     1 Mile = 63360 Inch DONE
+//Todo     13 Inch + 11 Inch = 2 Feet
+//Todo     3 Feet + 2 Yard = 3 Yard
+//
 
 
 //1 Mile <= 1760 Yard <= 300 Feet  <= 10 Inch

@@ -6,6 +6,14 @@ public class Mile extends Length {
         this.setConvertedValue();
     }
 
+    public Mile(){}
+
+    @Override
+    void getSum(Length length1, Length length2) {
+        this.value= (float) Math.ceil((length1.getConvertedValue() + length2.getConvertedValue()));
+    }
+
+    @Override
     public void setConvertedValue() {
         this.convertedValue = value;
     }
