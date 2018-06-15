@@ -165,6 +165,7 @@ public class LengthTest {
 
         result.getSum(inch, mile);
         Assert.assertTrue(result.getValue() == 4);
+
     }
 
     @Test
