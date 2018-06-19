@@ -1,9 +1,9 @@
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Consumer;
+import java.util.stream.Collectors;
 
 public class Hand {
     private List<String> cards = new ArrayList<>();
@@ -59,7 +59,7 @@ public class Hand {
     public String compareHand(Hand hand) {
         int cardA = 0;
         int cardB = 0;
-        if (getHandValue(hand.(getHandType)) == getHandValue(handType)) {
+        if (getHandValue(hand.getHandType()) == getHandValue(handType)) {
             if (handType.equals("High Card")) {
                 cardA = getCardValue(getHighCard(cards).substring(0, 1));
                 cardB = getCardValue(getHighCard(hand.getCards()).substring(0, 1));
@@ -67,12 +67,17 @@ public class Hand {
                 Map<String, Integer> pair = new HashMap<>();
                 getSameCardMap(pair, cards);
                 cardA = getCardValue(
-                        pair.entrySet().stream().filter(p -> p.getValue() == 2).toString()
-                );
+                        pair.entrySet().stream().filter(p -> p.getValue() == 2).findFirst().get().getValue().toString());
                 getSameCardMap(pair, hand.getCards());
                 cardB = getCardValue(pair.entrySet().stream().filter(p -> p.getValue() == 2).findFirst().get().getKey());
-
             } else if (handType.equals("Two Pair")) {
+
+                Map<String, Integer> pair = new HashMap<>();
+                getSameCardMap(pair, cards);
+                cardA = getCardValue(
+                        pair.entrySet().stream().filter(p -> p.getValue() == 2).findFirst().get().getValue().toString());
+                getSameCardMap(pair, hand.getCards());
+                cardB = getCardValue(pair.entrySet().stream().filter(p -> p.getValue() == 2).findFirst().get().getKey());
 
             }
         } else if (getHandValue(hand.getHandType()) < getHandValue(handType)) {
