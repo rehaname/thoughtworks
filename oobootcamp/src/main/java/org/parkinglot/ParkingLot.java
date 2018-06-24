@@ -3,16 +3,36 @@ package org.parkinglot;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ParkingLot {
+class ParkingLot {
     private int parkingLimit = 10;
 
-    public int getParkingLimit() {
+    ParkingLot(int parkingLimit) {
+        this.parkingLimit = parkingLimit;
+    }
+
+    int getParkingLimit() {
         return parkingLimit;
     }
 
-    private List<Car> parkingLot = new ArrayList();
+    private List<Car> cars = new ArrayList<>();
 
-    public List<Car> getParkingLot() {
-        return parkingLot;
+    List<Car> getCars() {
+        return cars;
+    }
+
+    int getAvailableSlot() {
+        return parkingLimit - cars.size();
+    }
+
+    double getParkingRatio() {
+        return (double) getAvailableSlot() / (double) parkingLimit;
+    }
+
+    boolean isAvailable() {
+        return getCars().size() < getParkingLimit();
+    }
+
+    public void park(Car car){
+        cars.add(car);
     }
 }

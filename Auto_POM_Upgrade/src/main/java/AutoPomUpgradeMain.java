@@ -1,98 +1,116 @@
+import com.google.gson.Gson;
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
-import org.eclipse.jgit.api.Git;
+import java.util.function.Consumer;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+import org.apache.commons.logging.impl.Log4JLogger;
 import org.eclipse.jgit.api.errors.GitAPIException;
-import org.eclipse.jgit.diff.DiffEntry;
-import org.eclipse.jgit.lib.ObjectReader;
-import org.eclipse.jgit.lib.Ref;
-import org.eclipse.jgit.lib.Repository;
-import org.eclipse.jgit.revwalk.RevCommit;
-import org.eclipse.jgit.revwalk.RevTree;
-import org.eclipse.jgit.revwalk.RevWalk;
-import org.eclipse.jgit.storage.file.FileRepositoryBuilder;
-import org.eclipse.jgit.treewalk.AbstractTreeIterator;
-import org.eclipse.jgit.treewalk.CanonicalTreeParser;
+import org.w3c.dom.Document;
+import org.w3c.dom.Node;
 
 public class AutoPomUpgradeMain {
-    private static Git git;
-    private static Repository repository;
-    private static String fileString;
+    public static final String URI = "D:\\My Documents\\Melvin Yu\\thoughtworks\\Auto_POM_Upgrade\\src\\main\\java\\DomainGit.json";
     private static List<String> pomList = new ArrayList<>();
+    private static DomainGit domain;
 
-    private static Git initGit() throws IOException {
-        repository = new FileRepositoryBuilder()
-                .setGitDir(new File("D:\\gitvob\\GSP\\post\\iris4_gsp\\.git"))
-                .build();
-        return new Git(repository);
-    }
 
     public static void main(String[] args) throws IOException, GitAPIException {
-        fileString = "D:\\gitvob\\GSP\\post\\iris4_gsp\\";
-        git = initGit();
+        String jsonContent = new String(Files.readAllBytes(new File(URI).toPath()));
+        domain = new Gson().fromJson(jsonContent, DomainGit.class);
+        GitManipulator git = new GitManipulator(domain.getRootDirectory());
+        git.getGitDiff().forEach(getPomToBeUpdated());
+        updateAllPom();
 
-        getGitDiff().forEach(diff -> {
+    }
 
+    private static void updateAllPom() {
+        pomList.forEach((String s) -> {
+            if (s.contains("pom") && s.contains("xml") && !s.contains("\\Data\\")) {
+                try {
+                    DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
+                    DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
+                    String pomFile = domain.getRootDirectory() + "\\" + s;
+                    Document doc = docBuilder.parse(pomFile);
+
+                    // Get the element by tag name directly
+                    getPomVersions(doc);
+
+                    // write the content into xml file
+                    TransformerFactory transformerFactory = TransformerFactory.newInstance();
+                    Transformer transformer = transformerFactory.newTransformer();
+                    transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
+                    DOMSource source = new DOMSource(doc);
+                    StreamResult result = new StreamResult(new File(pomFile));
+                    transformer.transform(source, result);
+
+                } catch (ParserConfigurationException | TransformerException | org.xml.sax.SAXException | IOException e) {
+                    new Log4JLogger().info(e.getMessage());
+                }
+            }
         });
-//        pomList.forEach(s -> {
-//            if (s.contains("pom") && s.contains("xml") && !s.contains("\\Data\\")) {
-//                System.out.println(s);
-//            }
-//        });
     }
 
-    private static List<String> getGitDiff() throws GitAPIException, IOException {
-        List<String> updatedModules = null;
-        if (repository.exactRef("refs/heads/testbranch") == null) {
+    private static void getPomVersions(Document doc) {
 
-            AbstractTreeIterator oldTreeParser = prepareTreeParser(repository, "IRIS4_R24.1");
-            AbstractTreeIterator newTreeParser = prepareTreeParser(repository, "IRIS4_R24.1_POST");
-
-            List<DiffEntry> diff = git.diff().setOldTree(oldTreeParser).setNewTree(newTreeParser).call();
-            updatedModules = diff.stream()
-                    .map(entry -> getString(entry)).distinct().collect(Collectors.toList());
+        List<PomVersion> versions = new ArrayList<>();
+        for (int i = 0; i < doc.getElementsByTagName("artifactId").getLength() - 1; i++) {
+            PomVersion ver = new PomVersion();
+            ver.setName(doc.getElementsByTagName("artifactId").item(i));
+            ver.setVersion(doc.getElementsByTagName("version").item(i));
+            versions.add(ver);
         }
+        versions.stream().forEach(v -> {
+            if (v.getVersion() != null) {
 
-        return updatedModules;
+                v.getVersion().setTextContent(incrementVersion(v.getVersion()));
+            }
+        });
     }
 
-    private static AbstractTreeIterator prepareTreeParser(Repository repository, String ref) throws IOException {
-        // from the commit we can build the tree which allows us to construct the TreeParser
-        Ref head = repository.findRef(ref);
-        RevWalk walk = new RevWalk(repository);
-        RevCommit commit = walk.parseCommit(head.getObjectId());
-        RevTree tree = walk.parseTree(commit.getTree().getId());
+    private static String incrementVersion(Node version) {
 
-        CanonicalTreeParser treeParser = new CanonicalTreeParser();
-        ObjectReader reader = repository.newObjectReader();
-        treeParser.reset(reader, tree.getId());
-        walk.dispose();
-
-        return treeParser;
-    }
-
-    private static String getString(DiffEntry entry) {
-
-        if (entry.toString().contains("/config/")) {
-            return entry.toString().substring(entry.toString().indexOf(" ")
-                    , entry.toString().indexOf("/")).trim() + "\\config";
-        } else {
-            return entry.toString().substring(entry.toString().indexOf(" ")
-                    , entry.toString().indexOf("/")).trim();
+        String currentVersion = version.getTextContent();
+        String newVersion = currentVersion;
+        if (currentVersion.length() == 12) {
+            newVersion = String.valueOf((Float.parseFloat(getSubstring(currentVersion, 12)) + .001));
+            newVersion = currentVersion.substring(0, currentVersion.lastIndexOf('.')) + getSubstring(newVersion, 5);
         }
+        return newVersion;
     }
 
-    private static void displayIt(File node) {
 
-        if (node.getAbsoluteFile().toString().contains("pom")) {
-            pomList.add(node.getAbsoluteFile().toString());
-        }
-        if (node.isDirectory()) {
-            String[] subNote = node.list();
-            for (String filename : subNote) {
-                displayIt(new File(node, filename));
+    private static String getSubstring(String string, int endIndex) {
+        return string.substring(string.lastIndexOf('.'), endIndex);
+    }
+
+
+    private static Consumer<String> getPomToBeUpdated() {
+        return diffModule -> {
+            Module module = domain.getSingleModule(diffModule);
+            getPom(module);
+        };
+    }
+
+    public static void getPom(Module module) {
+        for (String pom : module.getPoms()) {
+            Module innerModule = domain.getSingleModule(pom);
+            if (innerModule != null) {
+                getPom(innerModule);
+            } else {
+                if (!pomList.contains(module.getModule() + "\\" + pom)) {
+                    pomList.add(module.getModule() + "\\" + pom);
+                }
             }
         }
     }

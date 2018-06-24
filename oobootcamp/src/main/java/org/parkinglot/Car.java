@@ -1,13 +1,13 @@
 package org.parkinglot;
 
-public class Car {
-    Ticket assignedTicket;
+class Car {
+    private Ticket assignedTicket;
 
-    public void setTicket(Ticket assignedTicket) {
+    void setTicket(Ticket assignedTicket) {
         this.assignedTicket = assignedTicket;
     }
 
-    public boolean checkAssignedTicket(Ticket ticket) {
-        return this.assignedTicket == null ? false : this.assignedTicket.getTicketNumber() == ticket.getTicketNumber();
+    boolean checkAssignedTicket(Ticket ticket) {
+        return this.assignedTicket != null && this.assignedTicket.getTicketNumber() == ticket.getTicketNumber();
     }
 }

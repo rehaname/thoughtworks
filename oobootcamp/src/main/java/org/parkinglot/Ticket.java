@@ -1,15 +1,13 @@
 package org.parkinglot;
 
-public class Ticket {
-
-
+class Ticket {
     private int ticketNumber;
 
-    public Ticket(int ticketNumber) {
+    Ticket(int ticketNumber) {
         this.ticketNumber = ticketNumber;
     }
 
-    public int getTicketNumber() {
+    int getTicketNumber() {
         return ticketNumber;
     }
 }

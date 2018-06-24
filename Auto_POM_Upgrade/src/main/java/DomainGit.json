@@ -1,0 +1,34 @@
+{
+  "rootDirectory" : "D:\\gitvob\\GSP\\post\\iris4_gsp",
+  "mainBranch": "IRIS4_R24.1_POST",
+  "intBranch": "IRIS4_R24.1_POST_INT",
+  "modules": [
+    {"module":"WLS_DOM_GSP",
+      "poms":["pom.xml","pom_deploy.xml","war_file\\pom.xml","ear_file\\pom.xml"]
+    },
+     {"module":"WLS_PRS_GSP",
+      "poms":["pom.xml","pom_deploy.xml","war_file\\pom.xml","ear_file\\pom.xml"]
+    },
+        {"module":"WLS_DOM_GSP\\Config",
+      "poms":["pom.xml","pom_deploy.xml","pom_package.xml","war_file\\pom.xml","ear_file\\pom.xml"]
+    },
+     {"module":"WLS_PRS_GSP\\Config",
+      "poms":["pom.xml","pom_deploy.xml","pom_package.xml","war_file\\pom.xml","ear_file\\pom.xml"]
+    },
+     {"module":"GSPProxy",
+      "poms":["pom.xml","WLS_PRS_GSP"]
+    },
+     {"module":"GSP_Common",
+      "poms":["pom.xml","WLS_DOM_GSP"]
+    },
+     {"module":"GSPDto",
+      "poms":["pom.xml","GSPProxy","WLS_DOM_GSP"]
+    },
+     {"module":"main",
+      "poms":["pom.xml","GSPDto","GSP_Common"]
+    }
+  ]
+}
+
+
+

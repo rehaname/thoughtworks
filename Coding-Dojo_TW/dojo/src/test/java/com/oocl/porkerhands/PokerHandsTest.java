@@ -1,7 +1,8 @@
-import org.junit.Test;
+package com.oocl.porkerhands;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import com.oocl.pokerhands.Hand;
+import org.junit.Assert;
+import org.junit.Test;
 
 public class PokerHandsTest {
     //todo 1.	High cards - done 2H 3D 5S 9C KD  - 2C 3H 4S 8C AH Player 2 wins
@@ -10,7 +11,7 @@ public class PokerHandsTest {
         Hand playerOne = new Hand("2H","3D","5S","9C","KD");
         Hand playerTwo = new Hand("2C","3H","4S","8C","AH");
 
-        assertEquals(playerOne.compareHand(playerTwo), "Lose");
+        Assert.assertEquals(playerOne.compareHand(playerTwo), "Lose");
     }
 
     // one pair > high cards - done 2H 2D 5S 9C KD 2C 3H 4S 8C AH Player 1 wins
@@ -19,7 +20,7 @@ public class PokerHandsTest {
         Hand playerOne = new Hand("2H","2D","5S","9C","KD");
         Hand playerTwo = new Hand("2C","3H","4S","8C","AH");
 
-        assertEquals(playerOne.compareHand(playerTwo), "Win");
+        Assert.assertEquals(playerOne.compareHand(playerTwo), "Win");
     }
 
     //one pair higher win - done 2H 2D 5S 9C KD 3C 3H 4S 8C AH Player 2 wins
@@ -28,7 +29,7 @@ public class PokerHandsTest {
         Hand playerOne = new Hand("2H","2D","5S","9C","KD");
         Hand playerTwo = new Hand("3C","3H","4S","8C","AH");
 
-        assertEquals(playerOne.compareHand(playerTwo), "Lose");
+        Assert.assertEquals(playerOne.compareHand(playerTwo), "Lose");
     }
 
     //two pair < one pair - done 2H 2D 5S 9C KD 3C 3H 4S 4C AH Player 2 wins
@@ -37,7 +38,7 @@ public class PokerHandsTest {
         Hand playerOne = new Hand("2H","2D","5S","9C","KD");
         Hand playerTwo = new Hand("3C","3H","4S","4C","AH");
 
-        assertEquals(playerOne.compareHand(playerTwo), "Lose");
+        Assert.assertEquals(playerOne.compareHand(playerTwo), "Lose");
     }
 
     //two pair highest win - done 2H 2D 9S 9C KD 3C 3H 4S 4C AH Player 1 wins
@@ -46,7 +47,7 @@ public class PokerHandsTest {
         Hand playerOne = new Hand("2H","2D","9S","9C","KD");
         Hand playerTwo = new Hand("3C","3H","4S","4C","AH");
 
-        assertEquals(playerOne.compareHand(playerTwo), "Win");
+        Assert.assertEquals(playerOne.compareHand(playerTwo), "Win");
     }
 }
 

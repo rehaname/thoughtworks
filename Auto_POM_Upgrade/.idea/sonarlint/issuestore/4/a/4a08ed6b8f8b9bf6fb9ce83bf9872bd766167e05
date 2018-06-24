@@ -1,0 +1,9 @@
+
+1squid:S1220""Move this file to a named package.
+]squid:S3027;"FPut single-quotes around ']' to use the faster "indexOf(char)" method.(îÆá„
+?squid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+bsquid:S3027:"FPut single-quotes around ' ' to use the faster "indexOf(char)" method.(Òï›øÿÿÿÿ
+bsquid:S30277"FPut single-quotes around ' ' to use the faster "indexOf(char)" method.(Òï›øÿÿÿÿ
+isquid:UselessImportCheck"ERemove this unused import 'jdk.nashorn.internal.runtime.PropertyMap'.(¡âˆ’
+]squid:S3027;"FPut single-quotes around '/' to use the faster "indexOf(char)" method.(îÆá„
+bsquid:S30278"FPut single-quotes around '/' to use the faster "indexOf(char)" method.(Óñ˜®úÿÿÿÿ

@@ -3,63 +3,60 @@ package org.parkinglot;
 import java.util.ArrayList;
 import java.util.List;
 
-abstract class ParkingBoy {
+class ParkingBoy {
     private int parkingLot = 0;
     private int parkingNumber = 0;
-    List<ParkingLot> parkingLots = new ArrayList<>();
+    private List<ParkingLot> parkingLots = new ArrayList<>();
+    private SearchBehavior searchBehavior;
 
 
-    abstract boolean checkParkingAvailbleSlot(ParkingLot parkingLot);
 
-    public ParkingBoy(int parkingLot) {
-        this.parkingLot = parkingLot;
-        initParkingLots();
+    ParkingBoy(SearchBehavior searchBehavior){
+        this.searchBehavior = searchBehavior;
     }
 
-    private void initParkingLots() {
-        for (int x = 0; x < this.parkingLot; x++) {
-            parkingLots.add(new ParkingLot());
-        }
-    }
-
-    public Ticket parkCar(Car car) {
+    Ticket parkCar(Car car) {
         Ticket ticket = null;
 
-        for (ParkingLot pkngLot : parkingLots) {
-            if (checkParkingAvailbleSlot(pkngLot)) {
-                boolean hasBeenParked = pkngLot.getParkingLot().add(car);
-                if (hasBeenParked) {
-                    ticket = new Ticket(parkingNumber++);
-                    car.setTicket(ticket);
-                }
-                break;
-            }
+        ParkingLot selectedParkingLot = retrieveAvailableVacantLot();
+        selectedParkingLot.getCars().add(car);
+        if (containsCar(car)) {
+            ticket = new Ticket(parkingNumber++);
+            car.setTicket(ticket);
         }
-
 
         return ticket;
     }
 
-
-    public boolean containsCar(Car car) {
-        boolean result = false;
-        for (ParkingLot pkngLot : parkingLots) {
-            result = pkngLot.getParkingLot().contains(car);
-            if (result) {
-                return result;
-            }
-        }
-        return result;
+    public ParkingLot retrieveAvailableVacantLot() {
+        return searchBehavior.search(parkingLots);
     }
 
-    public Car pickUpCar(Ticket ticket) {
-        Car car = null;
-        for (ParkingLot pkngLot : parkingLots) {
-            for (Car car1:pkngLot.getParkingLot()) {
-                car = car1.checkAssignedTicket(ticket) ? car1 : null;
+    boolean containsCar(Car car) {
+        for (ParkingLot pkgLot : parkingLots) {
+            if (pkgLot.getCars().contains(car)) {
+                return true;
             }
         }
-        return car;
+        return false;
+    }
+
+    Car pickUpCar(Ticket ticket) {
+        for (ParkingLot pkngLot : parkingLots) {
+            for (Car car1 : pkngLot.getCars()) {
+                if (car1.checkAssignedTicket(ticket)) {
+                    return car1;
+                }
+            }
+        }
+        return null;
+    }
+
+    List<ParkingLot> getParkingLots() {
+        return parkingLots;
+    }
+    void addParkingLot(ParkingLot parkingLot) {
+        parkingLots.add(parkingLot);
     }
 
 }
