@@ -1,0 +1,5 @@
+com\tool\pojo\DomainGit.class
+com\tool\main\AutoPomUpgradeMain.class
+com\tool\main\GitManipulator.class
+com\tool\pojo\PomVersion.class
+com\tool\pojo\Module.class
