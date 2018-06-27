@@ -25,14 +25,16 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 
 public class AutoPomUpgradeMain {
-    public static final String DATA = "\\Data\\";
-    private static final String URI = "DomainGit.json";
-    public static final String ARTIFACT_ID = "artifactId";
-    public static final String VERSION = "version";
-    public static final String BACKSLASH = "\\";
-    public static final String POM = "pom";
-    public static final String XML = "xml";
-    public static final String YES = "yes";
+    private static final String DATA = "\\Data\\";
+    private static final String URI = "..\\DomainGit.json";
+    private static final String ARTIFACT_ID = "artifactId";
+    private static final String VERSION = "version";
+    private static final String BACKSLASH = "\\";
+    private static final String POM = "pom";
+    private static final String XML = "xml";
+    private static final String YES = "yes";
+    public static final int VERSION_SIZE = 12;
+    public static final double INCREMENT_VERSION = .001;
     private static List<String> pomList = new ArrayList<>();
     private static DomainGit domain;
 
@@ -54,10 +56,8 @@ public class AutoPomUpgradeMain {
                     String pomFile = domain.getRootDirectory() + BACKSLASH + s;
                     Document doc = docBuilder.parse(pomFile);
 
-                    // Get the element by tag name directly
                     getPomVersions(doc);
 
-                    // write the content into xml file
                     TransformerFactory transformerFactory = TransformerFactory.newInstance();
                     Transformer transformer = transformerFactory.newTransformer();
                     transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, YES);
@@ -73,7 +73,6 @@ public class AutoPomUpgradeMain {
     }
 
     private static void getPomVersions(Document doc) {
-
         List<PomVersion> versions = new ArrayList<>();
         for (int i = 0; i < doc.getElementsByTagName(ARTIFACT_ID).getLength() - 1; i++) {
             PomVersion ver = new PomVersion();
@@ -81,7 +80,7 @@ public class AutoPomUpgradeMain {
             ver.setVersion(doc.getElementsByTagName(VERSION).item(i));
             versions.add(ver);
         }
-        versions.stream().forEach(v -> {
+        versions.forEach(v -> {
             if (v.getVersion() != null) {
 
                 v.getVersion().setTextContent(incrementVersion(v.getVersion()));
@@ -93,8 +92,8 @@ public class AutoPomUpgradeMain {
 
         String currentVersion = version.getTextContent();
         String newVersion = currentVersion;
-        if (currentVersion.length() == 12) {
-            newVersion = String.valueOf((Float.parseFloat(getSubstring(currentVersion, 12)) + .001));
+        if (currentVersion.length() == VERSION_SIZE) {
+            newVersion = String.valueOf((Float.parseFloat(getSubstring(currentVersion, VERSION_SIZE)) + INCREMENT_VERSION));
             newVersion = currentVersion.substring(0, currentVersion.lastIndexOf('.')) + getSubstring(newVersion, 5);
         }
         return newVersion;
@@ -113,7 +112,7 @@ public class AutoPomUpgradeMain {
         };
     }
 
-    public static void getPom(Module module) {
+    private static void getPom(Module module) {
         for (String pom : module.getPoms()) {
             Module innerModule = domain.getSingleModule(pom);
             if (innerModule != null) {

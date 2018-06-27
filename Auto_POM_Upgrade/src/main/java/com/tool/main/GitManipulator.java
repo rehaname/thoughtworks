@@ -22,10 +22,10 @@ class GitManipulator {
 
     private static final String DATA = "Data";
     private static final String CONFIG = "/config/";
-    private static final String FRONTSLASH = "/";
+    private static final String FRONT_SLASH = "/";
     private static final String CONFIG1 = "\\Config";
     private static final String SPACE = " ";
-    private static final String CLOSINGBRACKET = "]";
+    private static final String CLOSING_BRACKET = "]";
     private static final String GIT = "\\.git";
     private DomainGit domain;
     private Repository repository;
@@ -62,16 +62,15 @@ class GitManipulator {
 
         if (entry.toString().contains(CONFIG)) {
             return entry.toString().substring(entry.toString().indexOf(SPACE)
-                    , entry.toString().indexOf(FRONTSLASH)).trim() + CONFIG1;
+                    , entry.toString().indexOf(FRONT_SLASH)).trim() + CONFIG1;
         } else {
             return entry.toString().substring(entry.toString().indexOf(SPACE)
-                    , entry.toString().contains(FRONTSLASH) ? entry.toString().indexOf(FRONTSLASH) : entry.toString().indexOf(CLOSINGBRACKET)).trim();
+                    , entry.toString().contains(FRONT_SLASH) ? entry.toString().indexOf(FRONT_SLASH) : entry.toString().indexOf(CLOSING_BRACKET)).trim();
         }
 
     }
 
     private static AbstractTreeIterator prepareTreeParser(Repository repository, String ref) throws IOException {
-        // from the commit we can build the tree which allows us to construct the TreeParser
         Ref head = repository.findRef(ref);
         RevWalk walk = new RevWalk(repository);
         RevCommit commit = walk.parseCommit(head.getObjectId());
