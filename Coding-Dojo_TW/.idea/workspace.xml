@@ -35,22 +35,12 @@
     <favorites_list name="Coding-Dojo_TW" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Hand.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dojo/src/main/java/com/oocl/pokerhands/Hand.java">
+    <leaf>
+      <file leaf-file-name="BowlingTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dojo/src/test/java/com/oocl/bowling/BowlingTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="12" column="28" lean-forward="false" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PokerHandsTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dojo/src/test/java/com/oocl/porkerhands/PokerHandsTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="833">
-              <caret line="51" column="1" lean-forward="false" selection-start-line="51" selection-start-column="1" selection-end-line="51" selection-end-column="1" />
+            <state relative-caret-position="418">
+              <caret line="29" column="52" lean-forward="true" selection-start-line="29" selection-start-column="52" selection-end-line="29" selection-end-column="52" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -58,12 +48,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BowlingTest.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/dojo/src/test/java/com/oocl/bowling/BowlingTest.java">
+      <file leaf-file-name="Bowling.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dojo/src/main/java/com/oocl/bowling/Bowling.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="133">
+              <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -99,7 +91,9 @@
         <option value="$PROJECT_DIR$/dojo/src/main/java/porkerhands/Hand.java" />
         <option value="$PROJECT_DIR$/dojo/src/main/java/com/oocl/pokerhands/Hand.java" />
         <option value="$PROJECT_DIR$/dojo/src/test/java/com/oocl/porkerhands/PokerHandsTest.java" />
+        <option value="$PROJECT_DIR$/dojo/src/test/java/com/oocl/bowling/Bowling.java" />
         <option value="$PROJECT_DIR$/dojo/src/test/java/com/oocl/bowling/BowlingTest.java" />
+        <option value="$PROJECT_DIR$/dojo/src/main/java/com/oocl/bowling/Bowling.java" />
       </list>
     </option>
   </component>
@@ -134,9 +128,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="AndroidView" />
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -157,6 +148,13 @@
             </path>
             <path>
               <item name="Coding-Dojo_TW" type="b2602c69:ProjectViewProjectNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="oocl" type="462c0819:PsiDirectoryNode" />
+              <item name="bowling" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Coding-Dojo_TW" type="b2602c69:ProjectViewProjectNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -170,10 +168,20 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="oocl" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Coding-Dojo_TW" type="b2602c69:ProjectViewProjectNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="oocl" type="462c0819:PsiDirectoryNode" />
+              <item name="bowling" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="AndroidView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -193,6 +201,9 @@
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="porkerhands" />
     </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.oocl.bowling" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -206,14 +217,19 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.PokerHandsTest.pairToPairCard">
-    <configuration name="PokerHandsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+  <component name="RunManager" selected="JUnit.BowlingTest.bowl_strike">
+    <configuration name="BowlingTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.oocl.bowling.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <module name="test" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.oocl.porkerhands" />
-      <option name="MAIN_CLASS_NAME" value="com.oocl.porkerhands.PokerHandsTest" />
+      <option name="PACKAGE_NAME" value="com.oocl.bowling" />
+      <option name="MAIN_CLASS_NAME" value="com.oocl.bowling.BowlingTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -227,14 +243,19 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="PokerHandsTest.highCardToHighCard" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+    <configuration name="BowlingTest.bowl_all_1_digit_" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.oocl.bowling.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <module name="test" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.oocl.porkerhands" />
-      <option name="MAIN_CLASS_NAME" value="com.oocl.porkerhands.PokerHandsTest" />
-      <option name="METHOD_NAME" value="highCardToHighCard" />
+      <option name="PACKAGE_NAME" value="com.oocl.bowling" />
+      <option name="MAIN_CLASS_NAME" value="com.oocl.bowling.BowlingTest" />
+      <option name="METHOD_NAME" value="bowl_all_1_digit_" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -247,14 +268,44 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="PokerHandsTest.pairToHighCard" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+    <configuration name="BowlingTest.bowl_no_strikes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.oocl.bowling.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <module name="test" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.oocl.porkerhands" />
-      <option name="MAIN_CLASS_NAME" value="com.oocl.porkerhands.PokerHandsTest" />
-      <option name="METHOD_NAME" value="pairToHighCard" />
+      <option name="PACKAGE_NAME" value="com.oocl.bowling" />
+      <option name="MAIN_CLASS_NAME" value="com.oocl.bowling.BowlingTest" />
+      <option name="METHOD_NAME" value="bowl_no_strikes" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="BowlingTest.bowl_strike" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.oocl.bowling.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="test" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.oocl.bowling" />
+      <option name="MAIN_CLASS_NAME" value="com.oocl.bowling.BowlingTest" />
+      <option name="METHOD_NAME" value="bowl_strike" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -275,26 +326,6 @@
       <option name="PACKAGE_NAME" value="com.oocl.porkerhands" />
       <option name="MAIN_CLASS_NAME" value="com.oocl.porkerhands.PokerHandsTest" />
       <option name="METHOD_NAME" value="pairToPairCard" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
-    <configuration name="PokerHandsTest.twoPairToOnePair" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="test" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.oocl.porkerhands" />
-      <option name="MAIN_CLASS_NAME" value="com.oocl.porkerhands.PokerHandsTest" />
-      <option name="METHOD_NAME" value="twoPairToOnePair" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -375,19 +406,19 @@
       <listeners />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.PokerHandsTest.pairToHighCard" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.PokerHandsTest.highCardToHighCard" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.PokerHandsTest" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.PokerHandsTest.twoPairToOnePair" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.PokerHandsTest.pairToPairCard" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.PokerHandsTest.pairToPairCard" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.BowlingTest.bowl_no_strikes" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.BowlingTest.bowl_all_1_digit_" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.BowlingTest" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.BowlingTest.bowl_strike" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.PokerHandsTest.pairToPairCard" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.PokerHandsTest.twoPairToOnePair" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.PokerHandsTest" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.PokerHandsTest.highCardToHighCard" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.PokerHandsTest.pairToHighCard" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.BowlingTest.bowl_strike" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.BowlingTest" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.BowlingTest.bowl_all_1_digit_" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.BowlingTest.bowl_no_strikes" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.PokerHandsTest.pairToPairCard" />
       </list>
     </recent_temporary>
   </component>
@@ -409,43 +440,44 @@
       <workItem from="1529439480114" duration="1139000" />
       <workItem from="1529455092527" duration="6742000" />
       <workItem from="1529476699012" duration="48000" />
+      <workItem from="1530073764198" duration="8034000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="PokerHandsTest - 2018.06.20 at 04h 20m 45s.xml">
-      <configuration name="PokerHandsTest" configurationId="JUnit" />
+    <history-entry file="BowlingTest - 2018.06.27 at 13h 35m 35s.xml">
+      <configuration name="BowlingTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PokerHandsTest_pairToPairCard - 2018.06.06 at 14h 08m 29s.xml">
-      <configuration name="PokerHandsTest.pairToPairCard" configurationId="JUnit" />
+    <history-entry file="BowlingTest_bowl_all_1_digit_ - 2018.06.27 at 13h 25m 19s.xml">
+      <configuration name="BowlingTest.bowl_all_1_digit_" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PokerHandsTest_pairToPairCard - 2018.06.20 at 04h 22m 47s.xml">
-      <configuration name="PokerHandsTest.pairToPairCard" configurationId="JUnit" />
+    <history-entry file="BowlingTest_bowl_no_strikes - 2018.06.27 at 13h 21m 42s.xml">
+      <configuration name="BowlingTest.bowl_no_strikes" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PokerHandsTest_pairToPairCard - 2018.06.20 at 04h 26m 31s.xml">
-      <configuration name="PokerHandsTest.pairToPairCard" configurationId="JUnit" />
+    <history-entry file="BowlingTest_bowl_strike - 2018.06.27 at 14h 11m 28s.xml">
+      <configuration name="BowlingTest.bowl_strike" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PokerHandsTest_pairToPairCard - 2018.06.20 at 04h 27m 17s.xml">
-      <configuration name="PokerHandsTest.pairToPairCard" configurationId="JUnit" />
+    <history-entry file="BowlingTest_bowl_strike - 2018.06.27 at 14h 11m 38s.xml">
+      <configuration name="BowlingTest.bowl_strike" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PokerHandsTest_pairToPairCard - 2018.06.20 at 04h 31m 48s.xml">
-      <configuration name="PokerHandsTest.pairToPairCard" configurationId="JUnit" />
+    <history-entry file="BowlingTest_bowl_strike - 2018.06.27 at 14h 12m 05s.xml">
+      <configuration name="BowlingTest.bowl_strike" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PokerHandsTest_pairToPairCard - 2018.06.20 at 11h 11m 09s.xml">
-      <configuration name="PokerHandsTest.pairToPairCard" configurationId="JUnit" />
+    <history-entry file="BowlingTest_bowl_strike - 2018.06.27 at 14h 14m 30s.xml">
+      <configuration name="BowlingTest.bowl_strike" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PokerHandsTest_pairToPairCard - 2018.06.20 at 11h 39m 38s.xml">
-      <configuration name="PokerHandsTest.pairToPairCard" configurationId="JUnit" />
+    <history-entry file="BowlingTest_bowl_strike - 2018.06.27 at 14h 28m 39s.xml">
+      <configuration name="BowlingTest.bowl_strike" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PokerHandsTest_twoPairToOnePair - 2018.06.06 at 14h 13m 27s.xml">
-      <configuration name="PokerHandsTest.twoPairToOnePair" configurationId="JUnit" />
+    <history-entry file="BowlingTest_bowl_strike - 2018.06.27 at 14h 28m 54s.xml">
+      <configuration name="BowlingTest.bowl_strike" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PokerHandsTest_twoPairToOnePair - 2018.06.20 at 09h 04m 05s.xml">
-      <configuration name="PokerHandsTest.twoPairToOnePair" configurationId="JUnit" />
+    <history-entry file="BowlingTest_bowl_strike - 2018.06.27 at 14h 30m 02s.xml">
+      <configuration name="BowlingTest.bowl_strike" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25916000" />
+    <option name="totallyTimeSpent" value="33950000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -462,19 +494,22 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32976446" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32976446" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3404711" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25266525" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2935049" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="SonarLint" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32976446" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -485,10 +520,39 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32976446" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3993576" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32976446" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34070796" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2935049" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="SonarLint" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -513,8 +577,14 @@
           </properties>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/dojo/src/main/java/com/oocl/bowling/Bowling.java</url>
+          <line>25</line>
+          <properties />
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="20" />
+      <option name="time" value="28" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -575,6 +645,34 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/dojo/src/main/java/com/oocl/pokerhands/Hand.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="12" column="28" lean-forward="false" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dojo/src/test/java/com/oocl/porkerhands/PokerHandsTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="931">
+          <caret line="51" column="1" lean-forward="false" selection-start-line="51" selection-start-column="1" selection-end-line="51" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dojo/src/test/java/com/oocl/bowling/BowlingTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dojo/src/main/java/com/oocl/pokerhands/Hand.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="12" column="28" lean-forward="false" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
           <folding />
@@ -586,7 +684,7 @@
         <state relative-caret-position="833">
           <caret line="51" column="1" lean-forward="true" selection-start-line="51" selection-start-column="1" selection-end-line="51" selection-end-column="1" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -595,7 +693,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="16" lean-forward="false" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -612,7 +712,7 @@
         <state relative-caret-position="459">
           <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -654,7 +754,6 @@
     </entry>
     <entry file="jar://C:/Java/jdk1.8.0_121/src.zip!/java/util/Map.java" />
     <entry file="jar://C:/Java/jdk1.8.0_121/src.zip!/java/lang/String.java" />
-    <entry file="jar://C:/Java/jdk1.8.0_121/src.zip!/java/util/Collections.java" />
     <entry file="jar://C:/Java/jdk1.8.0_121/src.zip!/java/lang/Object.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/src.zip!/java/lang/NumberFormatException.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/src.zip!/java/lang/Integer.java" />
@@ -666,29 +765,79 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dojo/src/main/java/porkerhands/PokerHandsTest.java" />
-    <entry file="file://$PROJECT_DIR$/dojo/src/main/java/com/oocl/pokerhands/Hand.java">
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/org/junit/Assert.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="12" column="28" lean-forward="false" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
-          <folding />
+        <state relative-caret-position="648">
+          <caret line="364" column="27" lean-forward="false" selection-start-line="364" selection-start-column="27" selection-end-line="364" selection-end-column="27" />
+          <folding>
+            <element signature="e#12545#12546#0" expanded="true" />
+            <element signature="e#12592#12593#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dojo/src/test/java/com/oocl/porkerhands/PokerHandsTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
+        <state relative-caret-position="829">
           <caret line="51" column="1" lean-forward="false" selection-start-line="51" selection-start-column="1" selection-end-line="51" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dojo/src/main/java/com/oocl/pokerhands/Hand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="22" column="56" lean-forward="false" selection-start-line="22" selection-start-column="56" selection-end-line="22" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Java/jdk1.8.0_121/src.zip!/java/util/Arrays.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="3799" column="28" lean-forward="false" selection-start-line="3799" selection-start-column="19" selection-end-line="3799" selection-end-column="28" />
+          <folding>
+            <element signature="e#177013#177014#0" expanded="false" />
+            <element signature="e#177054#177055#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Java/jdk1.8.0_121/src.zip!/java/util/Collections.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="5397" column="30" lean-forward="false" selection-start-line="5397" selection-start-column="30" selection-end-line="5397" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Java/jdk1.8.0_121/src.zip!/java/lang/Integer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="51" column="19" lean-forward="false" selection-start-line="51" selection-start-column="19" selection-end-line="51" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dojo/src/test/java/com/oocl/bowling/BowlingTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="29" column="52" lean-forward="true" selection-start-line="29" selection-start-column="52" selection-end-line="29" selection-end-column="52" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dojo/src/test/java/com/oocl/bowling/BowlingTest.java">
+    <entry file="file://$PROJECT_DIR$/dojo/src/main/java/com/oocl/bowling/Bowling.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="133">
+          <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
