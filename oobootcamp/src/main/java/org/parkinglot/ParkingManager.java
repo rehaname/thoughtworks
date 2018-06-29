@@ -3,36 +3,36 @@ package org.parkinglot;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ParkingManager extends ParkingBoy{
-    List<ParkingBoy> parkingBoyList = new ArrayList<>();
+class ParkingManager extends ParkingBoy {
+    private List<ParkingBoy> parkingBoyList = new ArrayList<>();
+
     ParkingManager(SearchBehavior searchBehavior) {
         super(searchBehavior);
     }
 
-    public void addParkingBoy(ParkingBoy parkingBoy) {
+    void addParkingBoy(ParkingBoy parkingBoy) {
         parkingBoyList.add(parkingBoy);
     }
 
-//    @Override
-//    Car pickUpCar(Ticket ticket){
-//        Car car = null;
-//
-//        parkingBoyList.stream().map
-//
-//        return car;
-//    }
+    @Override
+    Car pickUpCar(Ticket ticket) {
+        for (ParkingBoy parkingboy : parkingBoyList) {
+            Car car = parkingboy.pickUpCar(ticket);
+            if (car != null) {
+                return car;
+            }
+        }
+        return super.pickUpCar(ticket);
+    }
 
     @Override
     Ticket parkCar(Car car) {
-     return   getAvailableParkingBoy().parkCar(car);
-    }
-
-    ParkingBoy getAvailableParkingBoy(){
-        for(ParkingBoy parkingboy : parkingBoyList){
+        for (ParkingBoy parkingboy : parkingBoyList) {
             if (parkingboy.retrieveAvailableVacantLot() != null) {
-                return parkingboy;
+                return parkingboy.parkCar(car);
             }
         }
-        return this;
+        return super.parkCar(car);
     }
+
 }

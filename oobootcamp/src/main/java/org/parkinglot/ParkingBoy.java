@@ -10,8 +10,7 @@ class ParkingBoy {
     private SearchBehavior searchBehavior;
 
 
-
-    ParkingBoy(SearchBehavior searchBehavior){
+    ParkingBoy(SearchBehavior searchBehavior) {
         this.searchBehavior = searchBehavior;
     }
 
@@ -19,16 +18,18 @@ class ParkingBoy {
         Ticket ticket = null;
 
         ParkingLot selectedParkingLot = retrieveAvailableVacantLot();
-        selectedParkingLot.getCars().add(car);
-        if (containsCar(car)) {
-            ticket = new Ticket(parkingNumber++);
-            car.setTicket(ticket);
+        if (selectedParkingLot != null) {
+            selectedParkingLot.getCars().add(car);
+            if (containsCar(car)) {
+                ticket = new Ticket(parkingNumber++);
+                car.setTicket(ticket);
+            }
         }
 
         return ticket;
     }
 
-    public ParkingLot retrieveAvailableVacantLot() {
+    ParkingLot retrieveAvailableVacantLot() {
         return searchBehavior.search(parkingLots);
     }
 
@@ -55,6 +56,7 @@ class ParkingBoy {
     List<ParkingLot> getParkingLots() {
         return parkingLots;
     }
+
     void addParkingLot(ParkingLot parkingLot) {
         parkingLots.add(parkingLot);
     }

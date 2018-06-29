@@ -3,6 +3,7 @@ package org.parkinglot;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
@@ -137,8 +138,8 @@ public class ParkingBoyTest {
         parkingBoy.addParkingLot(pkgLotC);
 
         insertCarsInParkingLot(pkgLotA,11);
-        insertCarsInParkingLot(pkgLotB,8);
-        insertCarsInParkingLot(pkgLotC,15);
+        insertCarsInParkingLot(pkgLotB,4);
+        insertCarsInParkingLot(pkgLotC,14);
 
         Car car = new Car();
         Ticket ticket = parkingBoy.parkCar(car);
@@ -149,8 +150,7 @@ public class ParkingBoyTest {
     }
 
 
-    //TODO given there is a parking manager and one parking boy and there is  parking lot is available, when car is parked and recieved ticket, then  parking boy parks the car
-
+    //TODO given there is a parking manager and one parking boy and there is  parking lot is available in parking boy, when car is parked and recieved ticket, then  parking boy parks the car
     @Test
     public void given_manager_and_boy_and_availableSlot_boy_will_park_the_car_then_recieves_ticket() throws Exception {
         ParkingManager parkingManager = new ParkingManager(new SmartSearch());
@@ -187,19 +187,93 @@ public class ParkingBoyTest {
         assertTrue(car.checkAssignedTicket(ticket));
         assertTrue(pkgLotD.getCars().contains(car));
         assertEquals(car, parkingManager.pickUpCar(ticket));
-
-
     }
 
+
+
+    //TODO given there is a parking manager and there is no parking boy and there is  parking lot  avaiable, when car is parked and recieved ticket, then  parking manager parks the car
+    @Test
+    public void given_manager_and_no_boy_and_availableSlot_manager_will_park_the_car_then_recieves_ticket() throws Exception {
+        ParkingManager parkingManager = new ParkingManager(new NormalSearch());
+        ParkingLot pkgLotA = new ParkingLot(7);
+        ParkingLot pkgLotB = new ParkingLot(7);
+        ParkingLot pkgLotC = new ParkingLot(7);
+        parkingManager.addParkingLot(pkgLotA);
+        parkingManager.addParkingLot(pkgLotB);
+        parkingManager.addParkingLot(pkgLotC);
+
+        insertCarsInParkingLot(pkgLotA,5);
+        insertCarsInParkingLot(pkgLotB,6);
+        insertCarsInParkingLot(pkgLotC,3);
+
+
+
+        Car car = new Car();
+        Ticket ticket = parkingManager.parkCar(car);
+
+        assertTrue(parkingManager.containsCar(car));
+        assertTrue(car.checkAssignedTicket(ticket));
+        assertTrue(pkgLotA.getCars().contains(car));
+        assertEquals(car, parkingManager.pickUpCar(ticket));
+    }
+    //TODO given there is a parking manager and there is no parking boy and there is no parking lot  avaiable, when car is parked and recieved ticket, then  Exception
+    @Test
+    public void given_manager_and_no_boy_and_no_availableSlot_will_cause_exception() throws Exception {
+        ParkingManager parkingManager = new ParkingManager(new NormalSearch());
+        ParkingLot pkgLotA = new ParkingLot(7);
+        ParkingLot pkgLotB = new ParkingLot(7);
+        ParkingLot pkgLotC = new ParkingLot(7);
+        parkingManager.addParkingLot(pkgLotA);
+        parkingManager.addParkingLot(pkgLotB);
+        parkingManager.addParkingLot(pkgLotC);
+
+        insertCarsInParkingLot(pkgLotA,7);
+        insertCarsInParkingLot(pkgLotB,7);
+        insertCarsInParkingLot(pkgLotC,7);
+
+
+
+        Car car = new Car();
+        exception.expect(NoSuchElementException.class);
+        Ticket ticket = parkingManager.parkCar(car);
+    }
+    //TODO given there is a parking manager and one parking boy and there is no  parking lot is available then Exception
+    @Test
+    public void given_manager_and_boy_and_no_availableSlot_will_return_no_ticket()  throws Exception {
+        ParkingManager parkingManager = new ParkingManager(new SmartSearch());
+        ParkingLot pkgLotA = new ParkingLot(7);
+        ParkingLot pkgLotB = new ParkingLot(7);
+        ParkingLot pkgLotC = new ParkingLot(7);
+        parkingManager.addParkingLot(pkgLotA);
+        parkingManager.addParkingLot(pkgLotB);
+        parkingManager.addParkingLot(pkgLotC);
+
+        insertCarsInParkingLot(pkgLotA,7);
+        insertCarsInParkingLot(pkgLotB,7);
+        insertCarsInParkingLot(pkgLotC,7);
+
+        ParkingBoy parkingBoy = new ParkingBoy(new SmartSearch());
+        ParkingLot pkgLotD = new ParkingLot(15);
+        ParkingLot pkgLotE = new ParkingLot(8);
+        ParkingLot pkgLotF = new ParkingLot(15);
+        parkingBoy.addParkingLot(pkgLotD);
+        parkingBoy.addParkingLot(pkgLotE);
+        parkingBoy.addParkingLot(pkgLotF);
+
+        insertCarsInParkingLot(pkgLotD,15);
+        insertCarsInParkingLot(pkgLotE,8);
+        insertCarsInParkingLot(pkgLotF,15);
+
+        parkingManager.addParkingBoy(parkingBoy);
+
+
+        Car car = new Car();
+        assertNull(parkingManager.parkCar(car));
+    }
 
     private void insertCarsInParkingLot(ParkingLot pkgLotA, int limit) {
         for (int i = 1; i <= limit; i++) {
             pkgLotA.park(new Car());
         }
     }
-
-    //TODO given there is a parking manager and there is no parking boy and there is  parking lot  avaiable, when car is parked and recieved ticket, then  parking manager parks the car
-    //TODO given there is a parking manager and there is no parking boy and there is no parking lot  avaiable, when car is parked and recieved ticket, then  Exception
-    //TODO given there is a parking manager and one parking boy and there is no  parking lot is available, when car is parked and recieved ticket, then Exception
-
 }

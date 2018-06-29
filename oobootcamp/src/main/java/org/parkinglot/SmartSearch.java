@@ -9,7 +9,9 @@ public class SmartSearch implements SearchBehavior {
 
         for (ParkingLot pkgLot : parkingLotList) {
             if (result == null) {
-                result = pkgLot;
+                if (pkgLot.getAvailableSlot() > 0) {
+                    result = pkgLot;
+                }
             } else {
                 if (pkgLot.getAvailableSlot() > result.getAvailableSlot()) {
                     result = pkgLot;
