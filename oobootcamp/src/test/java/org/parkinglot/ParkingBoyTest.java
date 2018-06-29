@@ -1,5 +1,6 @@
 package org.parkinglot;
 
+import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
@@ -7,6 +8,11 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.NoSuchElementException;
 import org.junit.Rule;
 import org.junit.Test;
@@ -271,6 +277,59 @@ public class ParkingBoyTest {
         assertNull(parkingManager.parkCar(car));
     }
 
+    @Test
+    public void given_parking_director_asks_for_report() throws Exception {
+        ParkingManager parkingManager = new ParkingManager(new SmartSearch());
+        ParkingLot pkgLotA = new ParkingLot(10);
+        parkingManager.addParkingLot(pkgLotA);
+        insertCarsInParkingLot(pkgLotA,2);
+
+        ParkingBoy parkingBoy1 = new ParkingBoy(new SmartSearch());
+        ParkingLot pkgLotB = new ParkingLot(5);
+        parkingBoy1.addParkingLot(pkgLotB);
+        insertCarsInParkingLot(pkgLotB,2);
+
+        ParkingBoy parkingBoy2 = new ParkingBoy(new SmartSearch());
+        ParkingLot pkgLotC = new ParkingLot(3);
+        ParkingLot pkgLotD = new ParkingLot(2);
+        parkingBoy2.addParkingLot(pkgLotC);
+        parkingBoy2.addParkingLot(pkgLotD);
+        insertCarsInParkingLot(pkgLotD,1);
+
+        parkingManager.addParkingBoy(parkingBoy1);
+        parkingManager.addParkingBoy(parkingBoy2);
+
+
+        List<ParkingManager> parkingManagers = new ArrayList<>();
+        parkingManagers.add(parkingManager);
+
+        parkingManager.generateReportString();
+
+        ParkingDirector director = new ParkingDirector();
+        director.hireManager(parkingManagers);
+        director.viewReport();
+
+        BufferedReader br;
+
+        br = readParkingReport();
+        String readValue;
+
+        for (Report report : director.getReports()) {
+            System.out.println(report.getUnit() + " " + report.getParkedCars() + " " + report.getMaximumLimit());
+            if ((readValue = br.readLine()) != null)
+            {
+                assertThat(report.getUnit() + " " + report.getParkedCars() + " " + report.getMaximumLimit(), is(readValue));
+            }
+        }
+    }
+
+    private BufferedReader readParkingReport() throws FileNotFoundException {
+        FileReader fr;
+        BufferedReader br;
+        fr = new FileReader("reports.txt");
+        br = new BufferedReader(fr);
+        return br;
+    }
     private void insertCarsInParkingLot(ParkingLot pkgLotA, int limit) {
         for (int i = 1; i <= limit; i++) {
             pkgLotA.park(new Car());

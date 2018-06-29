@@ -10,7 +10,7 @@ class ParkingLot {
         this.parkingLimit = parkingLimit;
     }
 
-    private int getParkingLimit() {
+    int getParkingLimit() {
         return parkingLimit;
     }
 

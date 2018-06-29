@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 class ParkingBoy {
-    private int parkingLot = 0;
     private int parkingNumber = 0;
     private List<ParkingLot> parkingLots = new ArrayList<>();
     private SearchBehavior searchBehavior;
